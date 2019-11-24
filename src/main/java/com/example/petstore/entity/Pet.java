@@ -16,7 +16,7 @@ public class Pet implements Serializable {
 	private static final long serialVersionUID = -3352680435189176469L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	@Column(name = "name", nullable = true, length = 20)
@@ -30,6 +30,15 @@ public class Pet implements Serializable {
 
 	@Column(name = "userid", nullable = true, length = 20)
 	private int userid;
+
+	public Pet(int id, String name, String type, int age, int userid) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.age = age;
+		this.userid = userid;
+	}
 
 	public int getId() {
 		return id;

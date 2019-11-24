@@ -29,4 +29,14 @@ public class PetServiceImpl implements PetService {
 		return null;
 	}
 
+	@Override
+	public Pet savePet(Pet pet) {
+		return petRepository.save(pet);
+	}
+
+	@Override
+	public void deletebyId(Integer id) {
+		petRepository.deleteById(id);	
+	}
+
 }

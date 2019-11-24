@@ -9,7 +9,11 @@ public interface PetService {
 	List<Pet> findAllPets();
 
 	List<Pet> findPetsForUser(int userid);
-	
-	String buyPetfromStore(int petid,int userid);
+
+	String buyPetfromStore(int petid, int userid);
+
+	Pet savePet(Pet pet);
+
+	void deletebyId(Integer id);
 
 }
