@@ -49,7 +49,8 @@ public class PetController {
 	public ResponseEntity<Pet> saveNewPet1(@RequestBody Pet pet) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json; charset=utf-8");
-		return new ResponseEntity<Pet>(petService.savePet(pet), headers, HttpStatus.CREATED);
+		//return new ResponseEntity<Pet>(petService.savePet(pet), headers, HttpStatus.CREATED);
+		return new ResponseEntity<Pet>(petService.savePet(pet),HttpStatus.CREATED);
 	}
 
 	//@PostMapping("/savePet")
