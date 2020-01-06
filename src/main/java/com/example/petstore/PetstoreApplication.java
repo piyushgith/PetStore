@@ -14,10 +14,12 @@ import com.example.petstore.repository.PetRepository;
 @SpringBootApplication
 public class PetstoreApplication {
 
+	org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
+
 	public static void main(String[] args) {
 		SpringApplication.run(PetstoreApplication.class, args);
 	}
-	
+
 	@Bean
 	CommandLineRunner init(PetRepository petRepository) {
 
@@ -27,6 +29,8 @@ public class PetstoreApplication {
 			petList.add(new Pet(2, "Kitty", "Cat", 4, 2));
 			petList.add(new Pet(3, "Mohini", "Cow", 5, 2));
 			petList.add(new Pet(4, "Mustang", "Horse", 1, 3));
+
+			logger.info(petList.get(1).toString());
 
 			petList.forEach(x -> petRepository.save(x));
 		};
