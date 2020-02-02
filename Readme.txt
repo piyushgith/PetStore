@@ -16,3 +16,6 @@ mvn clean package -e
 sudo docker image build -t petstore .
 
 sudo docker container run -d -p 2000:2000 --name petstore petstore:latest
+
+
+http://localhost:8080/petstore/hi
