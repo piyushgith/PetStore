@@ -14,8 +14,12 @@ update localhost in application.properties
 mvn clean package -e
 
 sudo docker image build -t petstore .
-
+//ignore below port but needed 
 sudo docker container run -d -p 2000:2000 --name petstore petstore:latest
 
 
 http://localhost:8080/petstore/hi
+
+from docker
+url format: IPAddress+tomcat_port+warfilename+path
+http://172.17.0.4:8080/petstore/getPets
