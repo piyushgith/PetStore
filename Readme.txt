@@ -1,4 +1,4 @@
-sudo docker container run --name mysqldb -e MYSQL_ROOT_PASSWORD=piyush -e MYSQL_DATABASE=test1 -d mysql:5.7.29
+sudo docker container run -p 3306:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=piyush -e MYSQL_DATABASE=test1 -d mysql:5.7.29
 
 #search container ip address by name
 sudo docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysqldb
