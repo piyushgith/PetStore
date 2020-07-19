@@ -26,6 +26,11 @@ mvn clean package -e -DskipTests=true
 //delete everything   
    sudo docker-compose down
 
+//how to push image
+sudo docker image ls -a
+sudo docker tag petstore_manager-app piyushprasad2007/petstore-demo:v1
+sudo docker push piyushprasad2007/petstore-demo:v1
+
 //ignore below port but needed 
 //sudo docker container run -d -p 2000:2000 --name petstore petstore:latest
 #It will be available on 8080 don't know why may be because war file+tomcat
@@ -38,3 +43,4 @@ url format: IPAddress+tomcat_port+warfilename+path
 http://172.17.0.4:8080/petstore/getPets
 
 http://172.26.0.3:8080/petstore/getPets
+
