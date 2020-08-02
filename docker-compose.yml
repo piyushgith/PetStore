@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   manager-app:
+    container_name: petstore
     restart: always
     build: ./
     expose:
@@ -18,8 +19,8 @@ services:
       - backend
 
   docker-mysql:
-    restart: always
     container_name: docker-mysql
+    restart: always
     image: mysql:5.7.31
     environment:
       MYSQL_DATABASE: test1
